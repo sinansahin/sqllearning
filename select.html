@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Sql Komutlarını Öğren!</title>
+		<meta name="generator" content="Sinan Şahin" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+     <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery.mousewheel-min.js"></script>
+    <script src="js/jquery.terminal-min.js"></script>
+    <link href="css/jquery.terminal.css" rel="stylesheet"/>
+	</head>
+	<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row">
+            <!-- sidebar -->
+            <div class="column col-sm-2" id="sidebar">
+                <a class="logo" href="index.html">S</a>
+                <ul class="nav">
+                    <li><a href="index.html">Anasayfa</a>
+                    </li>
+                    <li class="active"><a href="select.html">Select Komutu</a>
+                    </li>
+                    <li><a href="insert.html">Insert Komutu</a>
+                    </li>
+                    <li><a href="delete.html">Delete Komutu</a>
+                    </li>
+                    <li><a href="update.html">Update Komutu</a>
+                    </li>
+                </ul>
+                <ul class="nav hidden-xs" id="sidebar-footer">
+                    <li>
+                      <a href="http://www.sinansahin.net.tr" target="_blank"><h3>Sinan Şahin</h3></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /sidebar -->
+          
+            <!-- main -->
+            <div class="column col-sm-10" id="main">
+                <div class="padding">
+                    <div class="full col-sm-12">
+                      
+                        <!-- content -->
+                        
+                        <div class="col-sm-12" id="featured">   
+                          <div class="page-header text-muted">
+                          Select Komutu
+                          </div> 
+                        <!--/top story-->
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h3>Select Komutu Nedir?</h3>
+                            <p>Select komutu veritabanındaki bir veya birden fazla tablodan veri <b>çekmek</b> için kullanılır.</p>
+                            <p>Kullanımı :  <b>SELECT</b> [alanlar] <b>FROM</b> [tablo adı]</p>
+                            <p>Aşağıdaki tabloda verilen komutları terminal ekranına yazarak denemesin.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row divider">    
+                           <div class="col-sm-12"><hr></div>
+                        </div>
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            <div class="row">
+                              <div class="col-sm-5">
+
+                              <table class="table table-hover table-bordered">
+                                <thead><th>İşlevi</th><th>Komut</th></thead>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      Tüm Verileri Çekmek
+                                    </td>
+                                    <td>
+                                      Select * From Personel
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Verileri Koşula Göre Çekmek
+                                    </td>
+                                    <td>
+                                      Select * From Personel Where adi like "Ali"<br /><br />
+                                      Select * From Personel Where id=5<br /><br />
+                                      Select * From Personel Where adi like "A%"
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Verileri İki yada Daha Fazla Koşula Göre Veri Çekme
+                                    </td>
+                                    <td>
+                                      Select * From Personel Where soyadi like "K%" And tel like "12%"<br /><br />
+                                      Select * From Personel Where soyadi like "K%" Or tel like "12%"
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Verileri Belirli Alanları Çekmek
+                                    </td>
+                                    <td>
+                                      Select adi, soyadi From Personel
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      Verileri Sıralı Şekilde Çekmek
+                                    </td>
+                                    <td>
+                                      Select * From Personel Order By Soyadi Desc
+                                    </td>
+                                  </tr>
+
+                                </tbody>
+                              </table>
+                              </div> 
+                              <div class="col-sm-7">
+                                <div id="div_terminal"></div>
+                                  <script>
+                                  jQuery(document).ready(function($) {
+                                      $('#div_terminal').terminal(function(command, term) {
+                                          if (command == 'help') {
+                                              term.echo("bu materyal temel sql komutlarını öğrenmeniz ve pratik yapabilmeniz için geliştirilmiştir.");
+                                          }else if (command == 'Select * From Personel') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|1          |Ali        |Kemal         |123 4568      |ali@asd.cse      |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|2          |Veli       |Hüsnü         |874 5563      |veli@asd.cse     |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|3          |Ahmet      |Mehmet        |197 6354      |ahmet@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|4          |Aylin      |Ayla          |122 2226      |aylin@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|5          |Sevda      |Kerim         |123 4817      |sevda@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                          }else if (command == 'Select * From Personel Order By Soyadi Desc') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|3          |Ahmet      |Mehmet        |197 6354      |ahmet@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|5          |Sevda      |Kerim         |123 4817      |sevda@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|1          |Ali        |Kemal         |123 4568      |ali@asd.cse      |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|2          |Veli       |Hüsnü         |874 5563      |veli@asd.cse     |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|4          |Aylin      |Ayla          |122 2226      |aylin@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                          }else if (command == 'Select adi, soyadi From Personel') {
+                                              term.echo("----------------------------");
+                                              term.echo("|adi        |soyadi        |");
+                                              term.echo("----------------------------");
+                                              term.echo("|Ali        |Kemal         |");
+                                              term.echo("----------------------------");
+                                              term.echo("|Veli       |Hüsnü         |");
+                                              term.echo("----------------------------");
+                                              term.echo("|Ahmet      |Mehmet        |");
+                                              term.echo("----------------------------");
+                                              term.echo("|Aylin      |Ayla          |");
+                                              term.echo("----------------------------");
+                                              term.echo("|Sevda      |Kerim         |");
+                                              term.echo("----------------------------");
+                                          }else if (command == 'Select * From Personel Where adi like "Ali"') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|1          |Ali        |Kemal         |123 4568      |ali@asd.cse      |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|3          |Ahmet      |Mehmet        |197 6354      |ahmet@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|4          |Aylin      |Ayla          |122 2226      |aylin@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                          }else if (command == 'Select * From Personel Where adi like "A%"') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|1          |Ali        |Kemal         |123 4568      |ali@asd.cse      |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                          }else if (command == 'Select * From Personel Where soyadi like "Kerim"') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|5          |Sevda      |Kerim         |123 4817      |sevda@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                          }else if (command == 'Select * From Personel Where id=5') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|5          |Sevda      |Kerim         |123 4817      |sevda@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                          }else if (command == 'Select * From Personel Where soyadi like "K%" Or tel like "12%"') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|1          |Ali        |Kemal         |123 4568      |ali@asd.cse      |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|5          |Sevda      |Kerim         |123 4817      |sevda@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|4          |Aylin      |Ayla          |122 2226      |aylin@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                          }else if (command == 'Select * From Personel Where soyadi like "K%" And tel like "12%"') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|1          |Ali        |Kemal         |123 4568      |ali@asd.cse      |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|5          |Sevda      |Kerim         |123 4817      |sevda@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                          }else {
+                                              term.echo("Bilinmeyen komut: " + command);
+                                          }
+                                      }, {
+                                          greetings: " ",
+                                          prompt: 'sql> ',
+                                          onBlur: function() {
+                                              // prevent loosing focus
+                                              return false;
+                                          }
+                                      });
+                                  });
+
+                                  </script>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="col-sm-12" id="stories">  
+                          <div class="page-header text-muted divider">
+                            > <a href="insert.html">Insert Komutu</a>
+                          </div>
+                        </div>
+                        
+                    </div><!-- /col-9 -->
+                </div><!-- /padding -->
+            </div>
+            <!-- /main -->
+        </div>
+    </div>
+</div>
+	<!-- script references -->
+		
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

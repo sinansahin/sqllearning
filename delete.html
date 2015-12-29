@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Sql Komutlarını Öğren!</title>
+		<meta name="generator" content="Sinan Şahin" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+     <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery.mousewheel-min.js"></script>
+    <script src="js/jquery.terminal-min.js"></script>
+    <link href="css/jquery.terminal.css" rel="stylesheet"/>
+	</head>
+	<body>
+<div class="wrapper">
+    <div class="box">
+        <div class="row">
+            <!-- sidebar -->
+            <div class="column col-sm-2" id="sidebar">
+                <a class="logo" href="index.html">S</a>
+                <ul class="nav">
+                    <li><a href="index.html">Anasayfa</a>
+                    </li>
+                    <li><a href="select.html">Select Komutu</a>
+                    </li>
+                    <li><a href="insert.html">Insert Komutu</a>
+                    </li>
+                    <li class="active"><a href="delete.html">Delete Komutu</a>
+                    </li>
+                    <li><a href="update.html">Update Komutu</a>
+                    </li>
+                </ul>
+                <ul class="nav hidden-xs" id="sidebar-footer">
+                    <li>
+                      <a href="http://www.sinansahin.net.tr" target="_blank"><h3>Sinan Şahin</h3></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /sidebar -->
+          
+            <!-- main -->
+            <div class="column col-sm-10" id="main">
+                <div class="padding">
+                    <div class="full col-sm-12">
+                      
+                        <!-- content -->
+                        
+                        <div class="col-sm-12" id="featured">   
+                          <div class="page-header text-muted">
+                          Delete Komutu
+                          </div> 
+                        
+                        
+                        <!--/top story-->
+                        <div class="row">    
+                          <div class="col-sm-10">
+                            <h3>Delete Komutu Nedir?</h3>
+                            <p>Delete komutu veritabanındaki tablonuzdan bir yada daha fazla veri <b>silmek</b> için kullanılır.</p>
+                            <p>Delete From Personel</p>
+                            <p>Delete From Personel Where id=5</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row divider">    
+                           <div class="col-sm-12"><hr></div>
+                        </div>
+                        <div class="row">    
+                          <div class="col-sm-12">
+                            <div class="row">
+                              <div class="col-sm-10">
+                                <div id="div_terminal"></div>
+                                  <script>
+                                  jQuery(document).ready(function($) {
+                                      $('#div_terminal').terminal(function(command, term) {
+                                          if (command == 'help') {
+                                              term.echo("bu materyal temel sql komutlarını öğrenmeniz ve pratik yapabilmeniz için geliştirilmiştir.");
+                                          }else if (command == 'Delete From Personel') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("Siliniyor..........")
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|1          |Ali        |Kemal         |123 4568      |ali@asd.cse      |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|2          |Veli       |Hüsnü         |874 5563      |veli@asd.cse     |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|3          |Ahmet      |Mehmet        |197 6354      |ahmet@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|4          |Aylin      |Ayla          |122 2226      |aylin@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|5          |Sevda      |Kerim         |123 4817      |sevda@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("5 Adet Kayıt Silindi")
+                                          }else if (command == 'Delete From Personel Where id=5') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("Siliniyor..........")
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|5          |Sevda      |Kerim         |123 4817      |sevda@asd.cse    |");
+                                              term.echo("1 Adet Kayıt Silindi")
+                                          }else {
+                                              term.echo("Bilinmeyen komut: " + command);
+                                          }
+                                      }, {
+                                          greetings: " ",
+                                          prompt: 'sql> ',
+                                          onBlur: function() {
+                                              // prevent loosing focus
+                                              return false;
+                                          }
+                                      });
+                                  });
+
+                                  </script>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        
+                        <div class="col-sm-12" id="stories">  
+                          <div class="page-header text-muted divider">
+                            > <a href="update.html">Update Komutu</a>
+                          </div>
+                        </div>
+                        
+                    </div><!-- /col-9 -->
+                </div><!-- /padding -->
+            </div>
+            <!-- /main -->
+        </div>
+    </div>
+</div>
+	<!-- script references -->
+		
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

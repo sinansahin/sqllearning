@@ -59,8 +59,6 @@
                           <div class="col-sm-10">
                             <h3>Select Komutu Nedir?</h3>
                             <p>Select komutu veritabanındaki bir veya birden fazla tablodan veri <b>çekmek</b> için kullanılır.</p>
-                            <p>Kullanımı :  <b>SELECT</b> [alanlar] <b>FROM</b> [tablo adı]</p>
-                            <p>Aşağıdaki tabloda verilen komutları terminal ekranına yazarak denemesin.</p>
                             </div>
                           </div>
                         </div>
@@ -70,59 +68,48 @@
                         <div class="row">    
                           <div class="col-sm-12">
                             <div class="row">
-                              <div class="col-sm-5">
-
-                              <table class="table table-hover table-bordered">
-                                <thead><th>İşlevi</th><th>Komut</th></thead>
-                                <tbody>
-                                  <tr>
-                                    <td>
-                                      Tüm Verileri Çekmek
-                                    </td>
-                                    <td>
-                                      Select * From Personel
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      Verileri Koşula Göre Çekmek
-                                    </td>
-                                    <td>
-                                      Select * From Personel Where adi like "Ali"<br /><br />
-                                      Select * From Personel Where id=5<br /><br />
-                                      Select * From Personel Where adi like "A%"
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      Verileri İki yada Daha Fazla Koşula Göre Veri Çekme
-                                    </td>
-                                    <td>
-                                      Select * From Personel Where soyadi like "K%" And tel like "12%"<br /><br />
-                                      Select * From Personel Where soyadi like "K%" Or tel like "12%"
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      Verileri Belirli Alanları Çekmek
-                                    </td>
-                                    <td>
-                                      Select adi, soyadi From Personel
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>
-                                      Verileri Sıralı Şekilde Çekmek
-                                    </td>
-                                    <td>
-                                      Select * From Personel Order By Soyadi Desc
-                                    </td>
-                                  </tr>
-
-                                </tbody>
-                              </table>
+                              <div class="col-sm-6">
+                                <div class="panel panel-success">
+                                  <div class="panel-heading">Genel Kullanım Yapısı</div>
+                                  <div class="panel-body">
+                                    <div class="well">SELECT [alanlar] FROM [tablo adı]</div>
+                                  </div>
+                                </div>
+                                <div class="panel panel-success">
+                                  <div class="panel-heading">Tüm Tabloyu Çekmek</div>
+                                  <div class="panel-body">
+                                    <div class="well">Select * From Personel</div>
+                                  </div>
+                                </div>
+                                <div class="panel panel-success">
+                                  <div class="panel-heading">Verileri Koşula Göre Çekmek</div>
+                                  <div class="panel-body">
+                                    <div class="well">Select * From Personel Where adi like "Ali"</div> 
+                                    <div class="well">Select * From Personel Where id=5</div> 
+                                    <div class="well">Select * From Personel Where adi like "A%"</div> 
+                                  </div>
+                                </div>
+                                <div class="panel panel-success">
+                                  <div class="panel-heading">Verileri İki yada Daha Fazla Koşula Göre Veri Çekmek</div>
+                                  <div class="panel-body">
+                                    <div class="well">Select * From Personel Where soyadi like "K%" And tel like "12%"</div> 
+                                    <div class="well">Select * From Personel Where soyadi like "K%" Or tel like "12%"</div>
+                                  </div>
+                                </div>
+                                <div class="panel panel-success">
+                                  <div class="panel-heading">Sadece Belirli Alanların Verilerini Çekmek</div>
+                                  <div class="panel-body">
+                                    <div class="well">Select adi, soyadi From Personel</div> 
+                                  </div>
+                                </div>
+                                <div class="panel panel-success">
+                                  <div class="panel-heading">Verileri Sıralı Şekilde Çekmek</div>
+                                  <div class="panel-body">
+                                    <div class="well">Select * From Personel Order By Soyadi Desc</div> 
+                                  </div>
+                                </div>
                               </div> 
-                              <div class="col-sm-7">
+                              <div class="col-sm-6">
                                 <div id="div_terminal"></div>
                                   <script>
                                   jQuery(document).ready(function($) {

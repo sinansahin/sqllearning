@@ -52,58 +52,66 @@
                         
                         <div class="col-sm-12" id="featured">   
                           <div class="page-header text-muted">
-                          Delete Komutu
+                          Update Komutu
                           </div> 
-                        
-                        
-                        <!--/top story-->
-                        <div class="row">    
-                          <div class="col-sm-10">
-                            <h3>Update Komutu Nedir?</h3>
-                            <p>Update komutu veritabanındaki tablonuzdan bir yada daha fazla veri <b>güncelleştirmek</b> için kullanılır.</p>
-                            <p>Update From Personel</p>
-                            <p>Update From Personel Where id=5</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row divider">    
-                           <div class="col-sm-12"><hr></div>
-                        </div>
                         <div class="row">    
                           <div class="col-sm-12">
                             <div class="row">
                               <div class="col-sm-10">
-                                <div id="div_terminal"></div>
+
+                              <h3>Update Komutu Nedir?</h3>
+                            <p>Update komutu veritabanındaki tablonuzdan bir yada daha fazla veri <b>güncelleştirmek</b> için kullanılır.</p>
+                            <div class="panel panel-success">
+                              <div class="panel-heading">Genel Kullanım Yapısı</div>
+                              <div class="panel-body">
+                                <div class="well">Update [tablo adı] Set [yeni bilgiler] Where [şartlar]</div>
+                              </div>
+                            </div>
+                            <div class="panel panel-success">
+                              <div class="panel-heading">Tüm Tabloyu Güncelleştirmek</div>
+                              <div class="panel-body">
+                                <div class="well">Update Personel Set tel="123 6978"</div>
+                              </div>
+                            </div>
+                            <div class="panel panel-success">
+                              <div class="panel-heading">Koşula Göre Güncelleştirmek</div>
+                              <div class="panel-body">
+                                <div class="well">Update Personel Set soyadi="Gökalp" Where id=5</div> 
+                              </div>
+                            </div>
+                              </div> 
+                              <div class="col-sm-10">
+                                  <div id="div_terminal"></div>
                                   <script>
                                   jQuery(document).ready(function($) {
                                       $('#div_terminal').terminal(function(command, term) {
                                           if (command == 'help') {
                                               term.echo("bu materyal temel sql komutlarını öğrenmeniz ve pratik yapabilmeniz için geliştirilmiştir.");
-                                          }else if (command == 'Delete From Personel') {
+                                          }else if (command == 'Update Personel Set tel="123 6978"') {
                                               term.echo("-------------------------------------------------------------------------");
-                                              term.echo("Siliniyor..........")
-                                              term.echo("-------------------------------------------------------------------------");
-                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
-                                              term.echo("-------------------------------------------------------------------------");
-                                              term.echo("|1          |Ali        |Kemal         |123 4568      |ali@asd.cse      |");
-                                              term.echo("-------------------------------------------------------------------------");
-                                              term.echo("|2          |Veli       |Hüsnü         |874 5563      |veli@asd.cse     |");
-                                              term.echo("-------------------------------------------------------------------------");
-                                              term.echo("|3          |Ahmet      |Mehmet        |197 6354      |ahmet@asd.cse    |");
-                                              term.echo("-------------------------------------------------------------------------");
-                                              term.echo("|4          |Aylin      |Ayla          |122 2226      |aylin@asd.cse    |");
-                                              term.echo("-------------------------------------------------------------------------");
-                                              term.echo("|5          |Sevda      |Kerim         |123 4817      |sevda@asd.cse    |");
-                                              term.echo("-------------------------------------------------------------------------");
-                                              term.echo("5 Adet Kayıt Silindi")
-                                          }else if (command == 'Delete From Personel Where id=5') {
-                                              term.echo("-------------------------------------------------------------------------");
-                                              term.echo("Siliniyor..........")
+                                              term.echo("Güncelleştiriliyor..........")
                                               term.echo("-------------------------------------------------------------------------");
                                               term.echo("|id         |adi        |soyadi        |tel           |mail             |");
                                               term.echo("-------------------------------------------------------------------------");
-                                              term.echo("|5          |Sevda      |Kerim         |123 4817      |sevda@asd.cse    |");
-                                              term.echo("1 Adet Kayıt Silindi")
+                                              term.echo("|1          |Ali        |Kemal         |123 6978      |ali@asd.cse      |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|2          |Veli       |Hüsnü         |123 6978      |veli@asd.cse     |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|3          |Ahmet      |Mehmet        |123 6978      |ahmet@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|4          |Aylin      |Ayla          |123 6978      |aylin@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|5          |Sevda      |Kerim         |123 6978      |sevda@asd.cse    |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("5 Adet Kayıt Güncelleştirildi.")
+                                          }else if (command == 'Update Personel Set soyadi="Gökalp" Where id=5') {
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("Güncelleştiriliyor..........")
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|id         |adi        |soyadi        |tel           |mail             |");
+                                              term.echo("-------------------------------------------------------------------------");
+                                              term.echo("|5          |Sevda      |Gökalp         |123 4817      |sevda@asd.cse    |");
+                                              term.echo("1 Adet Kayıt Güncelleştirildi.")
                                           }else {
                                               term.echo("Bilinmeyen komut: " + command);
                                           }
@@ -123,6 +131,9 @@
                             </div>
                           </div>
                         </div>
+                        
+                        <!--/top story-->
+
                                                 
                         <div class="col-sm-12" id="stories">  
                           <div class="page-header text-muted divider">

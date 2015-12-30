@@ -4,11 +4,11 @@
 
 var quizJSON = {
     "info": {
-        "name":    "Hadi Öğrendiklerini Pekiştirelim",
-        "main":    "<p>......</p>",
-        "results": "çıktı yazısı",
+        "name":    "",
+        "main":    "<p> </p>",
+        "results": "Bitirdin materyal umarım faydalı olmuşumdur.",
         "level5":  "Tekrar Etmelisin",
-        "level4":  "Çalışmalısın",
+        "level4":  "Daha Çok Çalışmalısın",
         "level3":  "Orta",
         "level2":  "Başarılı",
         "level1":  "Gayet Başarılı" // no comma here
